@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChallengeCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZAd-Gp-pDk">
+                                <rect key="frame" x="114" y="139" width="165" height="32"/>
+                                <segments>
+                                    <segment title="Distance"/>
+                                    <segment title="Eelevation"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Pv-dt-gku"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter a metric (e.g distance, elevation)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rk7-zS-rMy">
+                                <rect key="frame" x="20" y="190" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metric (distance, elevation)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIk-RK-Fge">
+                                <rect key="frame" x="20" y="232" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter number of weeks" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-t2-DCT">
+                                <rect key="frame" x="20" y="293" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t90-Os-DPy">
+                                <rect key="frame" x="20" y="335" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyZ-2r-8jd">
+                                <rect key="frame" x="109.00000000000001" y="396" width="175.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calculate Challenge"/>
+                                <connections>
+                                    <action selector="challengeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGs-eZ-SFG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly training:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KQ-9Q-oTh">
+                                <rect key="frame" x="20" y="471" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rk7-zS-rMy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6lb-dO-M1y"/>
+                            <constraint firstItem="5KQ-9Q-oTh" firstAttribute="top" secondItem="hyZ-2r-8jd" secondAttribute="bottom" constant="40" id="7Lf-1t-anI"/>
+                            <constraint firstItem="t90-Os-DPy" firstAttribute="top" secondItem="xa9-t2-DCT" secondAttribute="bottom" constant="8" id="FIf-bX-YAT"/>
+                            <constraint firstItem="xa9-t2-DCT" firstAttribute="top" secondItem="fIk-RK-Fge" secondAttribute="bottom" constant="40" id="FrC-Fo-EiG"/>
+                            <constraint firstItem="hyZ-2r-8jd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K0y-Aa-f9q"/>
+                            <constraint firstItem="ZAd-Gp-pDk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="LFW-Qm-86l"/>
+                            <constraint firstItem="fIk-RK-Fge" firstAttribute="top" secondItem="Rk7-zS-rMy" secondAttribute="bottom" constant="8" id="MIf-mD-Gt0"/>
+                            <constraint firstItem="t90-Os-DPy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P5D-HY-q2B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rk7-zS-rMy" secondAttribute="trailing" constant="20" id="PdS-Yg-jvH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xa9-t2-DCT" secondAttribute="trailing" constant="20" id="Rwm-1S-eKa"/>
+                            <constraint firstItem="fIk-RK-Fge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uda-Zn-I9p"/>
+                            <constraint firstItem="ZAd-Gp-pDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WKj-2s-IXH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5KQ-9Q-oTh" secondAttribute="trailing" constant="20" id="XhP-zL-Zq1"/>
+                            <constraint firstItem="xa9-t2-DCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aT6-xb-NZ8"/>
+                            <constraint firstItem="5KQ-9Q-oTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mKG-Sk-KmX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fIk-RK-Fge" secondAttribute="trailing" constant="20" id="qLC-Q0-SsS"/>
+                            <constraint firstItem="Rk7-zS-rMy" firstAttribute="top" secondItem="ZAd-Gp-pDk" secondAttribute="bottom" constant="20" id="r30-ns-fZy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t90-Os-DPy" secondAttribute="trailing" constant="20" id="yN2-mB-Fw2"/>
+                            <constraint firstItem="hyZ-2r-8jd" firstAttribute="top" secondItem="t90-Os-DPy" secondAttribute="bottom" constant="40" id="ydQ-eC-YDe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="5KQ-9Q-oTh" id="Nq0-XT-vaE"/>
+                        <outlet property="metricTextField" destination="Rk7-zS-rMy" id="fGu-4X-XQC"/>
+                        <outlet property="numberOfWeeksTextField" destination="xa9-t2-DCT" id="Jd2-bo-U3b"/>
+                        <outlet property="segmentedControl" destination="ZAd-Gp-pDk" id="9Y0-r2-CuG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

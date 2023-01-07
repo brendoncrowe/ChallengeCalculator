@@ -17,20 +17,14 @@ struct Challenge {
     func calculateWeeklyTraining(for metric: Double, and weeks: Int) -> Int {
         
         // refactor to guard against division by 0 weeks
-        
-        guard weeks > 0 else { return -1 }
-        // red(fails test), green(passes test), refactor(rewrite, optimize, and re-run test)
-        
+        guard weeks > 0 else { return 0 }
         return Int(metric) / weeks // average metric (elevation or distance) per week
     }
     
     func averageTrainingPerWeek(challengeMetric: Int, numberOfWorkoutDays: Int ) -> Int {
         
-        // guard against 0,
-        
         // guard for valid days of the week 1...7
-        guard (1...7).contains(numberOfWorkoutDays) else { return -1 }
-        
+        guard (1...7).contains(numberOfWorkoutDays) else { return 0 }
         return challengeMetric / numberOfWorkoutDays
     }
 }
